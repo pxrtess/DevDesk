@@ -1,4 +1,10 @@
-import { CheckCheck, type LucideIcon } from "lucide-react";
+import {
+  CheckCheck,
+  CircleUser,
+  MessageSquare,
+  TicketPlus,
+  type LucideIcon,
+} from "lucide-react";
 
 export interface SideMenuActivitiesProps {
   text: string;
@@ -11,19 +17,19 @@ const typeActionProps: {
   [key: number]: { icon: LucideIcon; color: string };
 } = {
   1: {
-    icon: CheckCheck,
-    color: "text-green-500",
+    icon: TicketPlus,
+    color: "text-white-500",
   },
   2: {
     icon: CheckCheck,
-    color: "text-red-500",
+    color: "text-green-500",
   },
   3: {
-    icon: CheckCheck,
+    icon: MessageSquare,
     color: "text-blue-500",
   },
   4: {
-    icon: CheckCheck,
+    icon: CircleUser,
     color: "text-yellow-500",
   },
 };

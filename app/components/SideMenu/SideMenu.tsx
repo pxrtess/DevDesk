@@ -43,17 +43,27 @@ const recentActivities = [
 
 const SideMenu = () => {
   return (
-    <div id="side-menu" className="bg-gray-800 text-white w-64 h-full p-4">
+    <div
+      id="side-menu"
+      className="flex h-full flex-col bg-gray-800 text-white w-64 p-4"
+    >
       <section id="side-menu-sections" className="space-y-2">
-        <SideMenuSection title="Home" icon={Home} />
-        <SideMenuSection title="Messages" icon={MessagesSquare} />
-        <SideMenuSection title="Tasks" icon={ListTodo} />
-        <SideMenuSection title="Members" icon={User} />
-        <SideMenuSection title="Settings" icon={Settings} />
+        <SideMenuSection route="/" title="Home" icon={Home} />
+        <SideMenuSection
+          route="/messages"
+          title="Messages"
+          icon={MessagesSquare}
+        />
+        <SideMenuSection route="/tasks" title="Tasks" icon={ListTodo} />
+        <SideMenuSection route="/members" title="Members" icon={User} />
+        <SideMenuSection route="/settings" title="Settings" icon={Settings} />
       </section>
       <hr className="my-4 ml-2 border-gray-600 " />
       <section id="side-menu-recent" className="mt-auto">
-        <p className="mb-4">Recent Activities</p>
+        <p className="mb-4 flex items-center justify-between">
+          Recent Activities{" "}
+          <span className="text-sm text-gray-400 cursor-pointer">See all</span>
+        </p>
         <div className="flex flex-col bg-gray-600 p-2 rounded-2xl mx-2 gap-y-2">
           {recentActivities.map((activity, index) => (
             <SideMenuActivities
